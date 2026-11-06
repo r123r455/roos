@@ -1,0 +1,22 @@
+joy_node:
+  ros__parameters:
+    device_id: 0
+    deadzone: 0.12
+    autorepeat_rate: 20.0
+
+rangka_krai_joy_teleop:
+  ros__parameters:
+    axis_forward: 1
+    axis_strafe: 0
+    axis_turn: 3
+    axis_claw: 4
+    button_deadman: 9
+    button_deadman_alternate: 4
+    button_claw_close: 0
+    button_claw_open: 1
+    deadzone: 0.12
+    linear_speed: 1.0
+    strafe_speed: 1.0
+    angular_speed: 1.2
+    claw_speed: 0.12
+    joy_timeout: 0.25

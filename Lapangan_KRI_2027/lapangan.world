@@ -1,0 +1,584 @@
+<?xml version="1.0"?>
+<!-- ABU Robocon 2027 - The Pursuit of Mustika Nusantara (dibuat oleh gen_lapangan.py) -->
+<sdf version="1.9">
+  <world name="robocon2027">
+    <physics name="1ms" type="ignored"><max_step_size>0.001</max_step_size><real_time_factor>1.0</real_time_factor></physics>
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <gravity>0 0 -9.8</gravity>
+    <scene><ambient>0.55 0.55 0.55 1</ambient><background>0.8 0.8 0.8 1</background><shadows>true</shadows></scene>
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows><pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse><specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.4 0.3 -0.9</direction>
+    </light>
+    <model name="lapangan">
+      <static>true</static>
+      <link name="field">
+      <collision name="ground_red_c"><pose>-2.7500 0.0000 -0.0100 0.00000 0.00000 0.00000</pose><geometry><box><size>5.5000 11.0000 0.0200</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="ground_red_v"><pose>-2.7500 0.0000 -0.0100 0.00000 0.00000 0.00000</pose><geometry><box><size>5.5000 11.0000 0.0200</size></box></geometry><material><ambient>0.941 0.824 0.824 1</ambient><diffuse>0.941 0.824 0.824 1</diffuse></material></visual>
+      <collision name="ground_blue_c"><pose>2.7500 0.0000 -0.0100 0.00000 0.00000 0.00000</pose><geometry><box><size>5.5000 11.0000 0.0200</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="ground_blue_v"><pose>2.7500 0.0000 -0.0100 0.00000 0.00000 0.00000</pose><geometry><box><size>5.5000 11.0000 0.0200</size></box></geometry><material><ambient>0.667 0.824 0.902 1</ambient><diffuse>0.667 0.824 0.902 1</diffuse></material></visual>
+      <collision name="wall_n_c"><pose>0.0000 5.5250 0.0500 0.00000 0.00000 0.00000</pose><geometry><box><size>11.1000 0.0500 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="wall_n_v"><pose>0.0000 5.5250 0.0500 0.00000 0.00000 0.00000</pose><geometry><box><size>11.1000 0.0500 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="wall_s_c"><pose>0.0000 -5.5250 0.0500 0.00000 0.00000 0.00000</pose><geometry><box><size>11.1000 0.0500 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="wall_s_v"><pose>0.0000 -5.5250 0.0500 0.00000 0.00000 0.00000</pose><geometry><box><size>11.1000 0.0500 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="wall_e_c"><pose>5.5250 0.0000 0.0500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0500 11.0000 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="wall_e_v"><pose>5.5250 0.0000 0.0500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0500 11.0000 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="wall_w_c"><pose>-5.5250 0.0000 0.0500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0500 11.0000 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="wall_w_v"><pose>-5.5250 0.0000 0.0500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0500 11.0000 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <visual name="storage_red_v"><pose>-4.5000 5.0000 0.0005 0.00000 0.00000 0.00000</pose><geometry><box><size>2.0000 1.0000 0.0010</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+      <visual name="storage_blue_v"><pose>4.5000 5.0000 0.0005 0.00000 0.00000 0.00000</pose><geometry><box><size>2.0000 1.0000 0.0010</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+      <visual name="start_r1_v"><pose>-5.1500 -5.1500 0.0005 0.00000 0.00000 0.00000</pose><geometry><box><size>0.7000 0.7000 0.0010</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+      <visual name="start_r2_v"><pose>-4.4000 -5.1500 0.0005 0.00000 0.00000 0.00000</pose><geometry><box><size>0.7000 0.7000 0.0010</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+      <visual name="start_b1_v"><pose>5.1500 -5.1500 0.0005 0.00000 0.00000 0.00000</pose><geometry><box><size>0.7000 0.7000 0.0010</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+      <visual name="start_b2_v"><pose>4.4000 -5.1500 0.0005 0.00000 0.00000 0.00000</pose><geometry><box><size>0.7000 0.7000 0.0010</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+      <visual name="mustika_pad_v"><pose>0.0000 4.2500 0.0005 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 1.0000 0.0010</size></box></geometry><material><ambient>0.961 0.941 0.784 1</ambient><diffuse>0.961 0.941 0.784 1</diffuse></material></visual>
+      <collision name="mustika_pillar_body_c"><pose>0.0000 4.2500 0.2000 0.00000 0.00000 0.00000</pose><geometry><cylinder><radius>0.1350</radius><length>0.4000</length></cylinder></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_body_v"><pose>0.0000 4.2500 0.2000 0.00000 0.00000 0.00000</pose><geometry><cylinder><radius>0.1350</radius><length>0.4000</length></cylinder></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring0_c"><pose>0.1125 4.2500 0.4500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring0_v"><pose>0.1125 4.2500 0.4500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring1_c"><pose>0.1087 4.2791 0.4500 0.00000 0.00000 0.26180</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring1_v"><pose>0.1087 4.2791 0.4500 0.00000 0.00000 0.26180</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring2_c"><pose>0.0974 4.3063 0.4500 0.00000 0.00000 0.52360</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring2_v"><pose>0.0974 4.3063 0.4500 0.00000 0.00000 0.52360</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring3_c"><pose>0.0795 4.3295 0.4500 0.00000 0.00000 0.78540</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring3_v"><pose>0.0795 4.3295 0.4500 0.00000 0.00000 0.78540</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring4_c"><pose>0.0563 4.3474 0.4500 0.00000 0.00000 1.04720</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring4_v"><pose>0.0563 4.3474 0.4500 0.00000 0.00000 1.04720</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring5_c"><pose>0.0291 4.3587 0.4500 0.00000 0.00000 1.30900</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring5_v"><pose>0.0291 4.3587 0.4500 0.00000 0.00000 1.30900</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring6_c"><pose>0.0000 4.3625 0.4500 0.00000 0.00000 1.57080</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring6_v"><pose>0.0000 4.3625 0.4500 0.00000 0.00000 1.57080</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring7_c"><pose>-0.0291 4.3587 0.4500 0.00000 0.00000 1.83260</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring7_v"><pose>-0.0291 4.3587 0.4500 0.00000 0.00000 1.83260</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring8_c"><pose>-0.0562 4.3474 0.4500 0.00000 0.00000 2.09440</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring8_v"><pose>-0.0562 4.3474 0.4500 0.00000 0.00000 2.09440</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring9_c"><pose>-0.0795 4.3295 0.4500 0.00000 0.00000 2.35619</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring9_v"><pose>-0.0795 4.3295 0.4500 0.00000 0.00000 2.35619</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring10_c"><pose>-0.0974 4.3063 0.4500 0.00000 0.00000 2.61799</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring10_v"><pose>-0.0974 4.3063 0.4500 0.00000 0.00000 2.61799</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring11_c"><pose>-0.1087 4.2791 0.4500 0.00000 0.00000 2.87979</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring11_v"><pose>-0.1087 4.2791 0.4500 0.00000 0.00000 2.87979</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring12_c"><pose>-0.1125 4.2500 0.4500 0.00000 0.00000 3.14159</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring12_v"><pose>-0.1125 4.2500 0.4500 0.00000 0.00000 3.14159</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring13_c"><pose>-0.1087 4.2209 0.4500 0.00000 0.00000 3.40339</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring13_v"><pose>-0.1087 4.2209 0.4500 0.00000 0.00000 3.40339</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring14_c"><pose>-0.0974 4.1937 0.4500 0.00000 0.00000 3.66519</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring14_v"><pose>-0.0974 4.1937 0.4500 0.00000 0.00000 3.66519</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring15_c"><pose>-0.0795 4.1705 0.4500 0.00000 0.00000 3.92699</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring15_v"><pose>-0.0795 4.1705 0.4500 0.00000 0.00000 3.92699</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring16_c"><pose>-0.0563 4.1526 0.4500 0.00000 0.00000 4.18879</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring16_v"><pose>-0.0563 4.1526 0.4500 0.00000 0.00000 4.18879</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring17_c"><pose>-0.0291 4.1413 0.4500 0.00000 0.00000 4.45059</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring17_v"><pose>-0.0291 4.1413 0.4500 0.00000 0.00000 4.45059</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring18_c"><pose>-0.0000 4.1375 0.4500 0.00000 0.00000 4.71239</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring18_v"><pose>-0.0000 4.1375 0.4500 0.00000 0.00000 4.71239</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring19_c"><pose>0.0291 4.1413 0.4500 0.00000 0.00000 4.97419</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring19_v"><pose>0.0291 4.1413 0.4500 0.00000 0.00000 4.97419</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring20_c"><pose>0.0563 4.1526 0.4500 0.00000 0.00000 5.23599</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring20_v"><pose>0.0563 4.1526 0.4500 0.00000 0.00000 5.23599</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring21_c"><pose>0.0795 4.1705 0.4500 0.00000 0.00000 5.49779</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring21_v"><pose>0.0795 4.1705 0.4500 0.00000 0.00000 5.49779</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring22_c"><pose>0.0974 4.1937 0.4500 0.00000 0.00000 5.75959</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring22_v"><pose>0.0974 4.1937 0.4500 0.00000 0.00000 5.75959</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="mustika_pillar_ring23_c"><pose>0.1087 4.2209 0.4500 0.00000 0.00000 6.02139</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="mustika_pillar_ring23_v"><pose>0.1087 4.2209 0.4500 0.00000 0.00000 6.02139</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <visual name="shared_pad_v"><pose>0.0000 -4.2500 0.0005 0.00000 0.00000 0.00000</pose><geometry><box><size>1.2000 1.2000 0.0010</size></box></geometry><material><ambient>0.961 0.941 0.784 1</ambient><diffuse>0.961 0.941 0.784 1</diffuse></material></visual>
+      <visual name="grid_11_v"><pose>-0.4000 -3.8500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.894 0.871 0.706 1</ambient><diffuse>0.894 0.871 0.706 1</diffuse></material></visual>
+      <visual name="grid_12_v"><pose>-0.2000 -3.8500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.98 0.969 0.882 1</ambient><diffuse>0.98 0.969 0.882 1</diffuse></material></visual>
+      <visual name="grid_13_v"><pose>0.0000 -3.8500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.894 0.871 0.706 1</ambient><diffuse>0.894 0.871 0.706 1</diffuse></material></visual>
+      <visual name="grid_14_v"><pose>0.2000 -3.8500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.98 0.969 0.882 1</ambient><diffuse>0.98 0.969 0.882 1</diffuse></material></visual>
+      <visual name="grid_15_v"><pose>0.4000 -3.8500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.894 0.871 0.706 1</ambient><diffuse>0.894 0.871 0.706 1</diffuse></material></visual>
+      <visual name="grid_21_v"><pose>-0.4000 -4.0500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.98 0.969 0.882 1</ambient><diffuse>0.98 0.969 0.882 1</diffuse></material></visual>
+      <visual name="grid_22_v"><pose>-0.2000 -4.0500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.894 0.871 0.706 1</ambient><diffuse>0.894 0.871 0.706 1</diffuse></material></visual>
+      <visual name="grid_23_v"><pose>0.0000 -4.0500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.98 0.969 0.882 1</ambient><diffuse>0.98 0.969 0.882 1</diffuse></material></visual>
+      <visual name="grid_24_v"><pose>0.2000 -4.0500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.894 0.871 0.706 1</ambient><diffuse>0.894 0.871 0.706 1</diffuse></material></visual>
+      <visual name="grid_25_v"><pose>0.4000 -4.0500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.98 0.969 0.882 1</ambient><diffuse>0.98 0.969 0.882 1</diffuse></material></visual>
+      <visual name="grid_31_v"><pose>-0.4000 -4.2500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.894 0.871 0.706 1</ambient><diffuse>0.894 0.871 0.706 1</diffuse></material></visual>
+      <visual name="grid_32_v"><pose>-0.2000 -4.2500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.98 0.969 0.882 1</ambient><diffuse>0.98 0.969 0.882 1</diffuse></material></visual>
+      <visual name="grid_33_v"><pose>0.0000 -4.2500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <visual name="grid_34_v"><pose>0.2000 -4.2500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.98 0.969 0.882 1</ambient><diffuse>0.98 0.969 0.882 1</diffuse></material></visual>
+      <visual name="grid_35_v"><pose>0.4000 -4.2500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.894 0.871 0.706 1</ambient><diffuse>0.894 0.871 0.706 1</diffuse></material></visual>
+      <visual name="grid_41_v"><pose>-0.4000 -4.4500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.98 0.969 0.882 1</ambient><diffuse>0.98 0.969 0.882 1</diffuse></material></visual>
+      <visual name="grid_42_v"><pose>-0.2000 -4.4500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.894 0.871 0.706 1</ambient><diffuse>0.894 0.871 0.706 1</diffuse></material></visual>
+      <visual name="grid_43_v"><pose>0.0000 -4.4500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.98 0.969 0.882 1</ambient><diffuse>0.98 0.969 0.882 1</diffuse></material></visual>
+      <visual name="grid_44_v"><pose>0.2000 -4.4500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.894 0.871 0.706 1</ambient><diffuse>0.894 0.871 0.706 1</diffuse></material></visual>
+      <visual name="grid_45_v"><pose>0.4000 -4.4500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.98 0.969 0.882 1</ambient><diffuse>0.98 0.969 0.882 1</diffuse></material></visual>
+      <visual name="grid_51_v"><pose>-0.4000 -4.6500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.894 0.871 0.706 1</ambient><diffuse>0.894 0.871 0.706 1</diffuse></material></visual>
+      <visual name="grid_52_v"><pose>-0.2000 -4.6500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.98 0.969 0.882 1</ambient><diffuse>0.98 0.969 0.882 1</diffuse></material></visual>
+      <visual name="grid_53_v"><pose>0.0000 -4.6500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.894 0.871 0.706 1</ambient><diffuse>0.894 0.871 0.706 1</diffuse></material></visual>
+      <visual name="grid_54_v"><pose>0.2000 -4.6500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.98 0.969 0.882 1</ambient><diffuse>0.98 0.969 0.882 1</diffuse></material></visual>
+      <visual name="grid_55_v"><pose>0.4000 -4.6500 0.0015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.2000 0.2000 0.0010</size></box></geometry><material><ambient>0.894 0.871 0.706 1</ambient><diffuse>0.894 0.871 0.706 1</diffuse></material></visual>
+      <collision name="L1_c"><pose>0.0000 0.0000 0.3000 0.00000 0.00000 0.00000</pose><geometry><box><size>6.0000 6.0000 0.6000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="L1_v"><pose>0.0000 0.0000 0.3000 0.00000 0.00000 0.00000</pose><geometry><box><size>6.0000 6.0000 0.6000</size></box></geometry><material><ambient>0.745 0.745 0.725 1</ambient><diffuse>0.745 0.745 0.725 1</diffuse></material></visual>
+      <visual name="L1_top_red_v"><pose>-1.5000 0.0000 0.6005 0.00000 0.00000 0.00000</pose><geometry><box><size>3.0000 6.0000 0.0010</size></box></geometry><material><ambient>0.922 0.706 0.627 1</ambient><diffuse>0.922 0.706 0.627 1</diffuse></material></visual>
+      <visual name="L1_top_blue_v"><pose>1.5000 0.0000 0.6005 0.00000 0.00000 0.00000</pose><geometry><box><size>3.0000 6.0000 0.0010</size></box></geometry><material><ambient>0.588 0.843 0.863 1</ambient><diffuse>0.588 0.843 0.863 1</diffuse></material></visual>
+      <visual name="L1_spot_rs_v"><pose>-2.7500 -2.7500 0.6015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.5000 0.5000 0.0010</size></box></geometry><material><ambient>0.157 0.392 0.196 1</ambient><diffuse>0.157 0.392 0.196 1</diffuse></material></visual>
+      <visual name="L1_spot_rn_v"><pose>-2.7500 2.7500 0.6015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.5000 0.5000 0.0010</size></box></geometry><material><ambient>0.157 0.392 0.196 1</ambient><diffuse>0.157 0.392 0.196 1</diffuse></material></visual>
+      <visual name="L1_spot_bs_v"><pose>2.7500 -2.7500 0.6015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.5000 0.5000 0.0010</size></box></geometry><material><ambient>0.157 0.392 0.196 1</ambient><diffuse>0.157 0.392 0.196 1</diffuse></material></visual>
+      <visual name="L1_spot_bn_v"><pose>2.7500 2.7500 0.6015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.5000 0.5000 0.0010</size></box></geometry><material><ambient>0.157 0.392 0.196 1</ambient><diffuse>0.157 0.392 0.196 1</diffuse></material></visual>
+      <visual name="L1_shared_pad_n_v"><pose>0.0000 2.5000 0.6015 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 1.0000 0.0010</size></box></geometry><material><ambient>0.961 0.941 0.784 1</ambient><diffuse>0.961 0.941 0.784 1</diffuse></material></visual>
+      <visual name="L1_shared_spot_n_v"><pose>0.0000 2.7500 0.6025 0.00000 0.00000 0.00000</pose><geometry><box><size>0.5000 0.5000 0.0010</size></box></geometry><material><ambient>0.157 0.392 0.196 1</ambient><diffuse>0.157 0.392 0.196 1</diffuse></material></visual>
+      <visual name="L1_shared_pad_s_v"><pose>0.0000 -2.5000 0.6015 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 1.0000 0.0010</size></box></geometry><material><ambient>0.961 0.941 0.784 1</ambient><diffuse>0.961 0.941 0.784 1</diffuse></material></visual>
+      <visual name="L1_shared_spot_s_v"><pose>0.0000 -2.7500 0.6025 0.00000 0.00000 0.00000</pose><geometry><box><size>0.5000 0.5000 0.0010</size></box></geometry><material><ambient>0.157 0.392 0.196 1</ambient><diffuse>0.157 0.392 0.196 1</diffuse></material></visual>
+      <visual name="L1_retry_red_v"><pose>-1.8500 2.6500 0.6015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.7000 0.7000 0.0010</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+      <visual name="L1_retry_blue_v"><pose>1.8500 2.6500 0.6015 0.00000 0.00000 0.00000</pose><geometry><box><size>0.7000 0.7000 0.0010</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+      <collision name="L2_c"><pose>0.0000 0.0000 0.7500 0.00000 0.00000 0.00000</pose><geometry><box><size>3.0000 3.0000 0.3000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="L2_v"><pose>0.0000 0.0000 0.7500 0.00000 0.00000 0.00000</pose><geometry><box><size>3.0000 3.0000 0.3000</size></box></geometry><material><ambient>0.745 0.745 0.725 1</ambient><diffuse>0.745 0.745 0.725 1</diffuse></material></visual>
+      <visual name="L2_spot_rs_v"><pose>-1.2500 -1.2500 0.9005 0.00000 0.00000 0.00000</pose><geometry><box><size>0.5000 0.5000 0.0010</size></box></geometry><material><ambient>0.157 0.392 0.196 1</ambient><diffuse>0.157 0.392 0.196 1</diffuse></material></visual>
+      <visual name="L2_spot_rn_v"><pose>-1.2500 1.2500 0.9005 0.00000 0.00000 0.00000</pose><geometry><box><size>0.5000 0.5000 0.0010</size></box></geometry><material><ambient>0.157 0.392 0.196 1</ambient><diffuse>0.157 0.392 0.196 1</diffuse></material></visual>
+      <visual name="L2_spot_bs_v"><pose>1.2500 -1.2500 0.9005 0.00000 0.00000 0.00000</pose><geometry><box><size>0.5000 0.5000 0.0010</size></box></geometry><material><ambient>0.157 0.392 0.196 1</ambient><diffuse>0.157 0.392 0.196 1</diffuse></material></visual>
+      <visual name="L2_spot_bn_v"><pose>1.2500 1.2500 0.9005 0.00000 0.00000 0.00000</pose><geometry><box><size>0.5000 0.5000 0.0010</size></box></geometry><material><ambient>0.157 0.392 0.196 1</ambient><diffuse>0.157 0.392 0.196 1</diffuse></material></visual>
+      <collision name="central_pillar_body_c"><pose>0.0000 0.0000 1.2500 0.00000 0.00000 0.00000</pose><geometry><cylinder><radius>0.1350</radius><length>0.7000</length></cylinder></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_body_v"><pose>0.0000 0.0000 1.2500 0.00000 0.00000 0.00000</pose><geometry><cylinder><radius>0.1350</radius><length>0.7000</length></cylinder></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring0_c"><pose>0.1125 0.0000 1.6500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring0_v"><pose>0.1125 0.0000 1.6500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring1_c"><pose>0.1087 0.0291 1.6500 0.00000 0.00000 0.26180</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring1_v"><pose>0.1087 0.0291 1.6500 0.00000 0.00000 0.26180</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring2_c"><pose>0.0974 0.0562 1.6500 0.00000 0.00000 0.52360</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring2_v"><pose>0.0974 0.0562 1.6500 0.00000 0.00000 0.52360</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring3_c"><pose>0.0795 0.0795 1.6500 0.00000 0.00000 0.78540</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring3_v"><pose>0.0795 0.0795 1.6500 0.00000 0.00000 0.78540</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring4_c"><pose>0.0563 0.0974 1.6500 0.00000 0.00000 1.04720</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring4_v"><pose>0.0563 0.0974 1.6500 0.00000 0.00000 1.04720</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring5_c"><pose>0.0291 0.1087 1.6500 0.00000 0.00000 1.30900</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring5_v"><pose>0.0291 0.1087 1.6500 0.00000 0.00000 1.30900</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring6_c"><pose>0.0000 0.1125 1.6500 0.00000 0.00000 1.57080</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring6_v"><pose>0.0000 0.1125 1.6500 0.00000 0.00000 1.57080</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring7_c"><pose>-0.0291 0.1087 1.6500 0.00000 0.00000 1.83260</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring7_v"><pose>-0.0291 0.1087 1.6500 0.00000 0.00000 1.83260</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring8_c"><pose>-0.0562 0.0974 1.6500 0.00000 0.00000 2.09440</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring8_v"><pose>-0.0562 0.0974 1.6500 0.00000 0.00000 2.09440</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring9_c"><pose>-0.0795 0.0795 1.6500 0.00000 0.00000 2.35619</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring9_v"><pose>-0.0795 0.0795 1.6500 0.00000 0.00000 2.35619</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring10_c"><pose>-0.0974 0.0562 1.6500 0.00000 0.00000 2.61799</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring10_v"><pose>-0.0974 0.0562 1.6500 0.00000 0.00000 2.61799</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring11_c"><pose>-0.1087 0.0291 1.6500 0.00000 0.00000 2.87979</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring11_v"><pose>-0.1087 0.0291 1.6500 0.00000 0.00000 2.87979</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring12_c"><pose>-0.1125 0.0000 1.6500 0.00000 0.00000 3.14159</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring12_v"><pose>-0.1125 0.0000 1.6500 0.00000 0.00000 3.14159</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring13_c"><pose>-0.1087 -0.0291 1.6500 0.00000 0.00000 3.40339</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring13_v"><pose>-0.1087 -0.0291 1.6500 0.00000 0.00000 3.40339</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring14_c"><pose>-0.0974 -0.0562 1.6500 0.00000 0.00000 3.66519</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring14_v"><pose>-0.0974 -0.0562 1.6500 0.00000 0.00000 3.66519</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring15_c"><pose>-0.0795 -0.0795 1.6500 0.00000 0.00000 3.92699</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring15_v"><pose>-0.0795 -0.0795 1.6500 0.00000 0.00000 3.92699</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring16_c"><pose>-0.0563 -0.0974 1.6500 0.00000 0.00000 4.18879</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring16_v"><pose>-0.0563 -0.0974 1.6500 0.00000 0.00000 4.18879</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring17_c"><pose>-0.0291 -0.1087 1.6500 0.00000 0.00000 4.45059</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring17_v"><pose>-0.0291 -0.1087 1.6500 0.00000 0.00000 4.45059</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring18_c"><pose>-0.0000 -0.1125 1.6500 0.00000 0.00000 4.71239</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring18_v"><pose>-0.0000 -0.1125 1.6500 0.00000 0.00000 4.71239</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring19_c"><pose>0.0291 -0.1087 1.6500 0.00000 0.00000 4.97419</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring19_v"><pose>0.0291 -0.1087 1.6500 0.00000 0.00000 4.97419</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring20_c"><pose>0.0563 -0.0974 1.6500 0.00000 0.00000 5.23599</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring20_v"><pose>0.0563 -0.0974 1.6500 0.00000 0.00000 5.23599</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring21_c"><pose>0.0795 -0.0795 1.6500 0.00000 0.00000 5.49779</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring21_v"><pose>0.0795 -0.0795 1.6500 0.00000 0.00000 5.49779</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring22_c"><pose>0.0974 -0.0563 1.6500 0.00000 0.00000 5.75959</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring22_v"><pose>0.0974 -0.0563 1.6500 0.00000 0.00000 5.75959</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="central_pillar_ring23_c"><pose>0.1087 -0.0291 1.6500 0.00000 0.00000 6.02139</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="central_pillar_ring23_v"><pose>0.1087 -0.0291 1.6500 0.00000 0.00000 6.02139</pose><geometry><box><size>0.0450 0.0373 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="L2_step_red_c"><pose>-1.6500 0.0000 0.6750 0.00000 0.00000 0.00000</pose><geometry><box><size>0.3000 1.0000 0.1500</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="L2_step_red_v"><pose>-1.6500 0.0000 0.6750 0.00000 0.00000 0.00000</pose><geometry><box><size>0.3000 1.0000 0.1500</size></box></geometry><material><ambient>0.922 0.706 0.627 1</ambient><diffuse>0.922 0.706 0.627 1</diffuse></material></visual>
+      <collision name="L2_step_blue_c"><pose>1.6500 0.0000 0.6750 0.00000 0.00000 0.00000</pose><geometry><box><size>0.3000 1.0000 0.1500</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="L2_step_blue_v"><pose>1.6500 0.0000 0.6750 0.00000 0.00000 0.00000</pose><geometry><box><size>0.3000 1.0000 0.1500</size></box></geometry><material><ambient>0.588 0.843 0.863 1</ambient><diffuse>0.588 0.843 0.863 1</diffuse></material></visual>
+      <collision name="red_ramp_c"><pose>-3.5000 0.6416 0.2507 -0.16978 0.00000 0.00000</pose><geometry><box><size>1.0000 3.5511 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="red_ramp_v"><pose>-3.5000 0.6416 0.2507 -0.16978 0.00000 0.00000</pose><geometry><box><size>1.0000 3.5511 0.1000</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill6_v"><pose>-3.5000 1.7500 0.0107 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.0214</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill7_v"><pose>-3.5000 1.6500 0.0193 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.0386</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill8_v"><pose>-3.5000 1.5500 0.0279 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.0557</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill9_v"><pose>-3.5000 1.4500 0.0364 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.0729</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill10_v"><pose>-3.5000 1.3500 0.0450 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.0900</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill11_v"><pose>-3.5000 1.2500 0.0536 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.1071</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill12_v"><pose>-3.5000 1.1500 0.0621 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.1243</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill13_v"><pose>-3.5000 1.0500 0.0707 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.1414</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill14_v"><pose>-3.5000 0.9500 0.0793 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.1586</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill15_v"><pose>-3.5000 0.8500 0.0879 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.1757</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill16_v"><pose>-3.5000 0.7500 0.0964 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.1929</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill17_v"><pose>-3.5000 0.6500 0.1050 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.2100</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill18_v"><pose>-3.5000 0.5500 0.1136 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.2271</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill19_v"><pose>-3.5000 0.4500 0.1221 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.2443</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill20_v"><pose>-3.5000 0.3500 0.1307 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.2614</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill21_v"><pose>-3.5000 0.2500 0.1393 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.2786</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill22_v"><pose>-3.5000 0.1500 0.1479 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.2957</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill23_v"><pose>-3.5000 0.0500 0.1564 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.3129</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill24_v"><pose>-3.5000 -0.0500 0.1650 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.3300</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill25_v"><pose>-3.5000 -0.1500 0.1736 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.3471</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill26_v"><pose>-3.5000 -0.2500 0.1821 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.3643</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill27_v"><pose>-3.5000 -0.3500 0.1907 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.3814</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill28_v"><pose>-3.5000 -0.4500 0.1993 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.3986</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill29_v"><pose>-3.5000 -0.5500 0.2079 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.4157</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill30_v"><pose>-3.5000 -0.6500 0.2164 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.4329</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill31_v"><pose>-3.5000 -0.7500 0.2250 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.4500</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill32_v"><pose>-3.5000 -0.8500 0.2336 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.4671</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill33_v"><pose>-3.5000 -0.9500 0.2421 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.4843</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <visual name="red_fill34_v"><pose>-3.5000 -1.0500 0.2507 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.5014</size></box></geometry><material><ambient>0.784 0.588 0.549 1</ambient><diffuse>0.784 0.588 0.549 1</diffuse></material></visual>
+      <collision name="red_transfer_base_c"><pose>-3.5000 -1.6000 0.3000 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 1.0000 0.6000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="red_transfer_base_v"><pose>-3.5000 -1.6000 0.3000 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 1.0000 0.6000</size></box></geometry><material><ambient>0.922 0.706 0.627 1</ambient><diffuse>0.922 0.706 0.627 1</diffuse></material></visual>
+      <visual name="red_transfer_v"><pose>-3.5000 -1.6000 0.6005 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 1.0000 0.0010</size></box></geometry><material><ambient>0.961 0.667 0.235 1</ambient><diffuse>0.961 0.667 0.235 1</diffuse></material></visual>
+      <collision name="red_step1_c"><pose>-3.5000 -2.2500 0.2250 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.3000 0.4500</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="red_step1_v"><pose>-3.5000 -2.2500 0.2250 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.3000 0.4500</size></box></geometry><material><ambient>0.922 0.706 0.627 1</ambient><diffuse>0.922 0.706 0.627 1</diffuse></material></visual>
+      <collision name="red_step2_c"><pose>-3.5000 -2.5500 0.1500 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.3000 0.3000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="red_step2_v"><pose>-3.5000 -2.5500 0.1500 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.3000 0.3000</size></box></geometry><material><ambient>0.922 0.706 0.627 1</ambient><diffuse>0.922 0.706 0.627 1</diffuse></material></visual>
+      <collision name="red_step3_c"><pose>-3.5000 -2.8500 0.0750 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.3000 0.1500</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="red_step3_v"><pose>-3.5000 -2.8500 0.0750 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.3000 0.1500</size></box></geometry><material><ambient>0.922 0.706 0.627 1</ambient><diffuse>0.922 0.706 0.627 1</diffuse></material></visual>
+      <collision name="blue_ramp_c"><pose>3.5000 0.6416 0.2507 -0.16978 0.00000 0.00000</pose><geometry><box><size>1.0000 3.5511 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="blue_ramp_v"><pose>3.5000 0.6416 0.2507 -0.16978 0.00000 0.00000</pose><geometry><box><size>1.0000 3.5511 0.1000</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill6_v"><pose>3.5000 1.7500 0.0107 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.0214</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill7_v"><pose>3.5000 1.6500 0.0193 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.0386</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill8_v"><pose>3.5000 1.5500 0.0279 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.0557</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill9_v"><pose>3.5000 1.4500 0.0364 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.0729</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill10_v"><pose>3.5000 1.3500 0.0450 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.0900</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill11_v"><pose>3.5000 1.2500 0.0536 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.1071</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill12_v"><pose>3.5000 1.1500 0.0621 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.1243</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill13_v"><pose>3.5000 1.0500 0.0707 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.1414</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill14_v"><pose>3.5000 0.9500 0.0793 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.1586</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill15_v"><pose>3.5000 0.8500 0.0879 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.1757</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill16_v"><pose>3.5000 0.7500 0.0964 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.1929</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill17_v"><pose>3.5000 0.6500 0.1050 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.2100</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill18_v"><pose>3.5000 0.5500 0.1136 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.2271</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill19_v"><pose>3.5000 0.4500 0.1221 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.2443</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill20_v"><pose>3.5000 0.3500 0.1307 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.2614</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill21_v"><pose>3.5000 0.2500 0.1393 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.2786</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill22_v"><pose>3.5000 0.1500 0.1479 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.2957</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill23_v"><pose>3.5000 0.0500 0.1564 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.3129</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill24_v"><pose>3.5000 -0.0500 0.1650 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.3300</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill25_v"><pose>3.5000 -0.1500 0.1736 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.3471</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill26_v"><pose>3.5000 -0.2500 0.1821 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.3643</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill27_v"><pose>3.5000 -0.3500 0.1907 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.3814</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill28_v"><pose>3.5000 -0.4500 0.1993 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.3986</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill29_v"><pose>3.5000 -0.5500 0.2079 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.4157</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill30_v"><pose>3.5000 -0.6500 0.2164 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.4329</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill31_v"><pose>3.5000 -0.7500 0.2250 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.4500</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill32_v"><pose>3.5000 -0.8500 0.2336 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.4671</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill33_v"><pose>3.5000 -0.9500 0.2421 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.4843</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <visual name="blue_fill34_v"><pose>3.5000 -1.0500 0.2507 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.1000 0.5014</size></box></geometry><material><ambient>0.51 0.706 0.784 1</ambient><diffuse>0.51 0.706 0.784 1</diffuse></material></visual>
+      <collision name="blue_transfer_base_c"><pose>3.5000 -1.6000 0.3000 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 1.0000 0.6000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="blue_transfer_base_v"><pose>3.5000 -1.6000 0.3000 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 1.0000 0.6000</size></box></geometry><material><ambient>0.588 0.843 0.863 1</ambient><diffuse>0.588 0.843 0.863 1</diffuse></material></visual>
+      <visual name="blue_transfer_v"><pose>3.5000 -1.6000 0.6005 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 1.0000 0.0010</size></box></geometry><material><ambient>0.235 0.667 0.961 1</ambient><diffuse>0.235 0.667 0.961 1</diffuse></material></visual>
+      <collision name="blue_step1_c"><pose>3.5000 -2.2500 0.2250 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.3000 0.4500</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="blue_step1_v"><pose>3.5000 -2.2500 0.2250 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.3000 0.4500</size></box></geometry><material><ambient>0.588 0.843 0.863 1</ambient><diffuse>0.588 0.843 0.863 1</diffuse></material></visual>
+      <collision name="blue_step2_c"><pose>3.5000 -2.5500 0.1500 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.3000 0.3000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="blue_step2_v"><pose>3.5000 -2.5500 0.1500 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.3000 0.3000</size></box></geometry><material><ambient>0.588 0.843 0.863 1</ambient><diffuse>0.588 0.843 0.863 1</diffuse></material></visual>
+      <collision name="blue_step3_c"><pose>3.5000 -2.8500 0.0750 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.3000 0.1500</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="blue_step3_v"><pose>3.5000 -2.8500 0.0750 0.00000 0.00000 0.00000</pose><geometry><box><size>1.0000 0.3000 0.1500</size></box></geometry><material><ambient>0.588 0.843 0.863 1</ambient><diffuse>0.588 0.843 0.863 1</diffuse></material></visual>
+      <collision name="L1_barrier_n_c"><pose>0.0000 2.9900 0.6250 0.00000 0.00000 0.00000</pose><geometry><box><size>6.0000 0.0200 0.0500</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="L1_barrier_n_v"><pose>0.0000 2.9900 0.6250 0.00000 0.00000 0.00000</pose><geometry><box><size>6.0000 0.0200 0.0500</size></box></geometry><material><ambient>0.745 0.745 0.725 1</ambient><diffuse>0.745 0.745 0.725 1</diffuse></material></visual>
+      <collision name="L1_barrier_s_c"><pose>0.0000 -2.9900 0.6250 0.00000 0.00000 0.00000</pose><geometry><box><size>6.0000 0.0200 0.0500</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="L1_barrier_s_v"><pose>0.0000 -2.9900 0.6250 0.00000 0.00000 0.00000</pose><geometry><box><size>6.0000 0.0200 0.0500</size></box></geometry><material><ambient>0.745 0.745 0.725 1</ambient><diffuse>0.745 0.745 0.725 1</diffuse></material></visual>
+      <collision name="L1_barrier_r_a_c"><pose>-2.9900 0.9500 0.6250 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 4.1000 0.0500</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="L1_barrier_r_a_v"><pose>-2.9900 0.9500 0.6250 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 4.1000 0.0500</size></box></geometry><material><ambient>0.745 0.745 0.725 1</ambient><diffuse>0.745 0.745 0.725 1</diffuse></material></visual>
+      <collision name="L1_barrier_r_b_c"><pose>-2.9900 -2.5500 0.6250 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 0.9000 0.0500</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="L1_barrier_r_b_v"><pose>-2.9900 -2.5500 0.6250 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 0.9000 0.0500</size></box></geometry><material><ambient>0.745 0.745 0.725 1</ambient><diffuse>0.745 0.745 0.725 1</diffuse></material></visual>
+      <collision name="L1_barrier_b_a_c"><pose>2.9900 0.9500 0.6250 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 4.1000 0.0500</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="L1_barrier_b_a_v"><pose>2.9900 0.9500 0.6250 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 4.1000 0.0500</size></box></geometry><material><ambient>0.745 0.745 0.725 1</ambient><diffuse>0.745 0.745 0.725 1</diffuse></material></visual>
+      <collision name="L1_barrier_b_b_c"><pose>2.9900 -2.5500 0.6250 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 0.9000 0.0500</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="L1_barrier_b_b_v"><pose>2.9900 -2.5500 0.6250 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 0.9000 0.0500</size></box></geometry><material><ambient>0.745 0.745 0.725 1</ambient><diffuse>0.745 0.745 0.725 1</diffuse></material></visual>
+      <collision name="div_g1_c"><pose>0.0000 5.1250 0.0500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 0.7500 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="div_g1_v"><pose>0.0000 5.1250 0.0500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 0.7500 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="div_g2_c"><pose>0.0000 3.3750 0.0500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 0.7500 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="div_g2_v"><pose>0.0000 3.3750 0.0500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 0.7500 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="div_g3_c"><pose>0.0000 -3.3750 0.0500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 0.7500 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="div_g3_v"><pose>0.0000 -3.3750 0.0500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 0.7500 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="div_g4_c"><pose>0.0000 -5.1750 0.0500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 0.6500 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="div_g4_v"><pose>0.0000 -5.1750 0.0500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 0.6500 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="div_l1a_c"><pose>0.0000 1.7500 0.6500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 0.5000 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="div_l1a_v"><pose>0.0000 1.7500 0.6500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 0.5000 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      <collision name="div_l1b_c"><pose>0.0000 -1.7500 0.6500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 0.5000 0.1000</size></box></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision><visual name="div_l1b_v"><pose>0.0000 -1.7500 0.6500 0.00000 0.00000 0.00000</pose><geometry><box><size>0.0200 0.5000 0.1000</size></box></geometry><material><ambient>0.392 0.243 0.0 1</ambient><diffuse>0.392 0.243 0.0 1</diffuse></material></visual>
+      </link>
+    </model>
+  <model name="earth_red_01"><pose>-5.2250 4.8000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_02"><pose>-5.2250 4.8000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_03"><pose>-5.2250 5.2000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_04"><pose>-5.2250 5.2000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_05"><pose>-4.8450 4.8000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_06"><pose>-4.8450 4.8000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_07"><pose>-4.8450 5.2000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_08"><pose>-4.8450 5.2000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_09"><pose>-4.4650 4.8000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_10"><pose>-4.4650 4.8000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_11"><pose>-4.4650 5.2000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_12"><pose>-4.4650 5.2000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_13"><pose>-4.0850 4.8000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_14"><pose>-4.0850 4.8000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_15"><pose>-4.0850 5.2000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_16"><pose>-4.0850 5.2000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_17"><pose>-3.7050 4.8000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_18"><pose>-3.7050 4.8000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_19"><pose>-3.7050 5.2000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_red_20"><pose>-3.7050 5.2000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_01"><pose>5.2250 4.8000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_02"><pose>5.2250 4.8000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_03"><pose>5.2250 5.2000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_04"><pose>5.2250 5.2000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_05"><pose>4.8450 4.8000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_06"><pose>4.8450 4.8000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_07"><pose>4.8450 5.2000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_08"><pose>4.8450 5.2000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_09"><pose>4.4650 4.8000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_10"><pose>4.4650 4.8000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_11"><pose>4.4650 5.2000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_12"><pose>4.4650 5.2000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_13"><pose>4.0850 4.8000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_14"><pose>4.0850 4.8000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_15"><pose>4.0850 5.2000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_16"><pose>4.0850 5.2000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_17"><pose>3.7050 4.8000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_18"><pose>3.7050 4.8000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_19"><pose>3.7050 5.2000 0.1770 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="earth_blue_20"><pose>3.7050 5.2000 0.5290 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.6</mass><inertia><ixx>0.012250</ixx><iyy>0.012250</iyy><izz>0.012250</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.35 0.35 0.35</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="sky_11"><pose>-0.4000 -3.8500 0.1020 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.22</mass><inertia><ixx>0.001467</ixx><iyy>0.001467</iyy><izz>0.001467</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><material><ambient>0.902 0.871 0.745 1</ambient><diffuse>0.902 0.871 0.745 1</diffuse></material></visual><visual name="red_half"><pose>0 0.051000000000000004 0 0 0 0</pose><geometry><box><size>0.20400000000000001 0.10200000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual><visual name="blue_half"><pose>0 -0.051000000000000004 0 0 0 0</pose><geometry><box><size>0.20400000000000001 0.10200000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="sky_13"><pose>0.0000 -3.8500 0.1020 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.22</mass><inertia><ixx>0.001467</ixx><iyy>0.001467</iyy><izz>0.001467</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><material><ambient>0.902 0.871 0.745 1</ambient><diffuse>0.902 0.871 0.745 1</diffuse></material></visual><visual name="red_half"><pose>0 0.051000000000000004 0 0 0 0</pose><geometry><box><size>0.20400000000000001 0.10200000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual><visual name="blue_half"><pose>0 -0.051000000000000004 0 0 0 0</pose><geometry><box><size>0.20400000000000001 0.10200000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="sky_15"><pose>0.4000 -3.8500 0.1020 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.22</mass><inertia><ixx>0.001467</ixx><iyy>0.001467</iyy><izz>0.001467</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><material><ambient>0.902 0.871 0.745 1</ambient><diffuse>0.902 0.871 0.745 1</diffuse></material></visual><visual name="red_half"><pose>0 -0.051000000000000004 0 0 0 0</pose><geometry><box><size>0.20400000000000001 0.10200000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual><visual name="blue_half"><pose>0 0.051000000000000004 0 0 0 0</pose><geometry><box><size>0.20400000000000001 0.10200000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="sky_22"><pose>-0.2000 -4.0500 0.1020 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.22</mass><inertia><ixx>0.001467</ixx><iyy>0.001467</iyy><izz>0.001467</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><material><ambient>0.902 0.871 0.745 1</ambient><diffuse>0.902 0.871 0.745 1</diffuse></material></visual><visual name="red_half"><pose>0.051000000000000004 0 0 0 0 0</pose><geometry><box><size>0.10200000000000001 0.20400000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual><visual name="blue_half"><pose>-0.051000000000000004 0 0 0 0 0</pose><geometry><box><size>0.10200000000000001 0.20400000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="sky_24"><pose>0.2000 -4.0500 0.1020 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.22</mass><inertia><ixx>0.001467</ixx><iyy>0.001467</iyy><izz>0.001467</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><material><ambient>0.902 0.871 0.745 1</ambient><diffuse>0.902 0.871 0.745 1</diffuse></material></visual><visual name="red_half"><pose>-0.051000000000000004 0 0 0 0 0</pose><geometry><box><size>0.10200000000000001 0.20400000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual><visual name="blue_half"><pose>0.051000000000000004 0 0 0 0 0</pose><geometry><box><size>0.10200000000000001 0.20400000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="sky_31"><pose>-0.4000 -4.2500 0.1020 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.22</mass><inertia><ixx>0.001467</ixx><iyy>0.001467</iyy><izz>0.001467</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><material><ambient>0.902 0.871 0.745 1</ambient><diffuse>0.902 0.871 0.745 1</diffuse></material></visual><visual name="red_half"><pose>0 -0.051000000000000004 0 0 0 0</pose><geometry><box><size>0.20400000000000001 0.10200000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual><visual name="blue_half"><pose>0 0.051000000000000004 0 0 0 0</pose><geometry><box><size>0.20400000000000001 0.10200000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="sky_35"><pose>0.4000 -4.2500 0.1020 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.22</mass><inertia><ixx>0.001467</ixx><iyy>0.001467</iyy><izz>0.001467</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><material><ambient>0.902 0.871 0.745 1</ambient><diffuse>0.902 0.871 0.745 1</diffuse></material></visual><visual name="red_half"><pose>0 0.051000000000000004 0 0 0 0</pose><geometry><box><size>0.20400000000000001 0.10200000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual><visual name="blue_half"><pose>0 -0.051000000000000004 0 0 0 0</pose><geometry><box><size>0.20400000000000001 0.10200000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="sky_42"><pose>-0.2000 -4.4500 0.1020 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.22</mass><inertia><ixx>0.001467</ixx><iyy>0.001467</iyy><izz>0.001467</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><material><ambient>0.902 0.871 0.745 1</ambient><diffuse>0.902 0.871 0.745 1</diffuse></material></visual><visual name="red_half"><pose>-0.051000000000000004 0 0 0 0 0</pose><geometry><box><size>0.10200000000000001 0.20400000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual><visual name="blue_half"><pose>0.051000000000000004 0 0 0 0 0</pose><geometry><box><size>0.10200000000000001 0.20400000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="sky_44"><pose>0.2000 -4.4500 0.1020 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.22</mass><inertia><ixx>0.001467</ixx><iyy>0.001467</iyy><izz>0.001467</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><material><ambient>0.902 0.871 0.745 1</ambient><diffuse>0.902 0.871 0.745 1</diffuse></material></visual><visual name="red_half"><pose>0.051000000000000004 0 0 0 0 0</pose><geometry><box><size>0.10200000000000001 0.20400000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual><visual name="blue_half"><pose>-0.051000000000000004 0 0 0 0 0</pose><geometry><box><size>0.10200000000000001 0.20400000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="sky_51"><pose>-0.4000 -4.6500 0.1020 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.22</mass><inertia><ixx>0.001467</ixx><iyy>0.001467</iyy><izz>0.001467</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><material><ambient>0.902 0.871 0.745 1</ambient><diffuse>0.902 0.871 0.745 1</diffuse></material></visual><visual name="red_half"><pose>0 0.051000000000000004 0 0 0 0</pose><geometry><box><size>0.20400000000000001 0.10200000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual><visual name="blue_half"><pose>0 -0.051000000000000004 0 0 0 0</pose><geometry><box><size>0.20400000000000001 0.10200000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="sky_53"><pose>0.0000 -4.6500 0.1020 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.22</mass><inertia><ixx>0.001467</ixx><iyy>0.001467</iyy><izz>0.001467</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><material><ambient>0.902 0.871 0.745 1</ambient><diffuse>0.902 0.871 0.745 1</diffuse></material></visual><visual name="red_half"><pose>0 -0.051000000000000004 0 0 0 0</pose><geometry><box><size>0.20400000000000001 0.10200000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual><visual name="blue_half"><pose>0 0.051000000000000004 0 0 0 0</pose><geometry><box><size>0.20400000000000001 0.10200000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="sky_55"><pose>0.4000 -4.6500 0.1020 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.22</mass><inertia><ixx>0.001467</ixx><iyy>0.001467</iyy><izz>0.001467</izz></inertia></inertial>
+      <collision name="c"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><surface><friction><ode><mu>0.7</mu><mu2>0.7</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><box><size>0.2 0.2 0.2</size></box></geometry><material><ambient>0.902 0.871 0.745 1</ambient><diffuse>0.902 0.871 0.745 1</diffuse></material></visual><visual name="red_half"><pose>0 -0.051000000000000004 0 0 0 0</pose><geometry><box><size>0.20400000000000001 0.10200000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.875 0.133 0.133 1</ambient><diffuse>0.875 0.133 0.133 1</diffuse></material></visual><visual name="blue_half"><pose>0 0.051000000000000004 0 0 0 0</pose><geometry><box><size>0.20400000000000001 0.10200000000000001 0.20400000000000001</size></box></geometry><material><ambient>0.196 0.0 1.0 1</ambient><diffuse>0.196 0.0 1.0 1</diffuse></material></visual>
+    </link>
+  </model>
+  <model name="mustika"><pose>0 4.25 0.5561 0 0 0</pose>
+    <link name="link">
+      <inertial><mass>0.27</mass><inertia><ixx>0.001985</ixx><iyy>0.001985</iyy><izz>0.001985</izz></inertia></inertial>
+      <collision name="c"><geometry><sphere><radius>0.105</radius></sphere></geometry><surface><friction><ode><mu>0.6</mu><mu2>0.6</mu2></ode></friction></surface></collision>
+      <visual name="v"><geometry><sphere><radius>0.105</radius></sphere></geometry><material><ambient>0.941 0.784 0.118 1</ambient><diffuse>0.941 0.784 0.118 1</diffuse></material></visual>
+    </link>
+  </model>
+  </world>
+</sdf>
